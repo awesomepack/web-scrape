@@ -8,8 +8,10 @@ def Scrape():
     Scrape retreives data from various mars mission websites and returns a dictionary containing the following structure:
     return_dict = {
         'news_title': news_title , 
-        'news_p': news_p , 
-
+        'news_p': news_p ,
+        'f_img': img_url ,  
+        'facts': facts_html , 
+        'Hems': Hems
     }
     '''
 
@@ -124,7 +126,14 @@ def Scrape():
 
     
     # Populating return_dict with scraped data
+    return_dict = {
+        'news_title': news_title , 
+        'news_p': news_p ,
+        'f_img': img_url ,  
+        'facts': facts_html , 
+        'Hems': Hems
+    }
 
-    return Hems
+    return return_dict
         
 
