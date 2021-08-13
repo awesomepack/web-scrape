@@ -12,7 +12,7 @@ mongo = PyMongo(app , uri = "mongodb://localhost:27017/scrape_app")
 # / will serve as landing page
 @app.route('/')
 def root():
-    return render_template("index.html" , text = "Welcome to my Home Page")
+    return render_template("index.html" , text = "Initiate Countdown!" )
     
 
 # /scrape will extract data from websites and store as dictionary for loading in mongo db
