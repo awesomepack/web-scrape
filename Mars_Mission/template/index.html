@@ -22,7 +22,7 @@
           <!-- Render our data -->
           <h2>Begin Scrape Countdown!</h2>
 
-          <a class="btn btn-primary" href="/scrape" role="button">Link</a>
+          <a class="btn btn-primary" href="/scrape" role="button">Scrape</a>
 
           </div>
 
@@ -73,6 +73,69 @@
         <img src = "{{mars_data.f_img}}" class = "img-fluid" alt="Featured Image">
 
       </div>
+
+      <!-- 6 width column for the html table -->
+      <div class = "col-6">
+        {{ mars_data.facts_html }}
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Container for Mars Hemispheres -->
+  <div class = "container">
+
+    <!-- Row for Hemispheres -->
+    <div class ="row">
+
+      <!-- 3 width column for Cerberus -->
+      <div class = "col-3">
+
+        <div class="card" style="width: 18rem;">
+          <img src="{{mars_data.Hems[0]['image_url']}}" class="card-img-top" alt="Cerberus Picture" style="max-width: 100%;">
+          <div class="card-body">
+            <h5 class="card-title">{{mars_data.Hems[0]['title']}}</h5>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 3 width column for Schiaparelli -->
+      <div class = "col-3">
+
+        <div class="card" style="width: 18rem;">
+          <img src="{{mars_data.Hems[1]['image_url']}}" class="card-img-top" alt="Schiaparelli Picture" style="max-width: 100%;">
+          <div class="card-body">
+            <h5 class="card-title">{{mars_data.Hems[1]['title']}}</h5>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 3 widht column for Syrtis -->
+      <div class = "col-3">
+
+        <div class="card" style="width: 18rem;">
+          <img src="{{mars_data.Hems[2]['image_url']}}" class="card-img-top" alt="Syrtis Picture" style = "max-width: 100%;">
+          <div class="card-body">
+            <h5 class="card-title">{{mars_data.Hems[2]['title']}}</h5>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 3 width column for Valles -->
+      <div class = "col-3">
+
+        <div class="card" style="width: 18rem;">
+          <img src="{{mars_data.Hems[3]['image_url']}}" class="card-img-top" alt="Valles Picture" style="max-width: 100%;">
+          <div class="card-body">
+            <h5 class="card-title">{{mars_data.Hems[3]['title']}}</h5>
+          </div>
+        </div>
+
+      </div>
+
     </div>
   </div>
 

@@ -114,7 +114,7 @@ def Scrape():
         # Defining hemisphere dictionary
         hem_dict = {
             'title': title ,
-            'image_url': img
+            'image_url': hem_target + img
             }
 
         # Appending Hems list
