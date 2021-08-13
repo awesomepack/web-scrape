@@ -32,7 +32,7 @@
   </div>
   <!-- End JumboTron -->
   
-  <!-- Container for title -->
+  <!-- Container for title and paragraph -->
   <div class = "container">
 
     <div class = "row">
@@ -44,26 +44,37 @@
     </div>
 
 <!-- Row for the scraped news summary and title -->
-
     <div class = "row">
       <div class = "col-12">
 
+        <!-- Scraped Title -->
         <h4 class = "text-center">
           {{mars_data.news_title}}
         </h4>
 
+        <!-- Scraped Paragraph -->
         <p class = "text-center">
           {{mars_data.news_p}}
         </p>
 
+      </div>
+    </div>
+  </div>
+  <!-- End title and paragraph container -->
 
+  <!-- Container for the Featured Image and Data Table -->
+  <div class = "container">
 
-        
+    <!-- Row for image and table -->
+    <div class = "row">
+
+      <!-- 6 width column for the featured image -->
+      <div class = "col-6">
+        <img src = "{{mars_data.f_img}}" class = "img-fluid" alt="Featured Image">
 
       </div>
     </div>
   </div>
-  <!-- End title container -->
 
 
 
