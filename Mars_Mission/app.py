@@ -2,6 +2,7 @@
 from scrape import Scrape
 from flask import Flask , render_template , redirect
 from flask_pymongo import PyMongo
+import pymongo
 
 # Create Flask instance
 app = Flask(__name__ , template_folder= 'template')
@@ -13,10 +14,25 @@ mongo = PyMongo(app , uri = "mongodb://localhost:27017/scrape_app")
 @app.route('/')
 def root():
 
-    # Need to query mongo for mars Data
+    # Create connection to local instance of mongo
+    conn = 'mongodb://localhost:27017'
+
+    # Pass connection to PyMongo
+    client = pymongo.MongoClient(conn)
+
+    # Connect to the scrape_app DB
+    db = client.scrape_app
+
+    # Drops collection if exists to prevent duplicates
+    db.scrape_app.drop()
+
+    # Collecting data from collection
+    mars_data = db.collection.find({})
+
+
 
     # Render HTML file by passing queried data
-    return render_template("index.html" , text = "Initiate Countdown!" )
+    return render_template("index.html" , mars_data  = mars_data , mars2 = mars_data )
     
 
 # /scrape will extract data from websites and store as dictionary for loading in mongo db

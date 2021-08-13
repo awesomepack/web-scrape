@@ -20,7 +20,7 @@
 
         <div class="jumbotron text-center">
           <!-- Render our data -->
-          <h1>{{ text }}</h1>
+          <h2>Begin Scrape Countdown!</h2>
 
           <a class="btn btn-primary" href="/scrape" role="button">Link</a>
 
@@ -36,21 +36,42 @@
     <div class = "row">
       <div class = 'col-12'>
 
-        <h3> Latest Mars News </h3>
+        <h3 class="text-center"> Latest Mars News </h3>
 
       </div>
     </div>
 
+<!-- Row for the scraped news summary and title -->
+
     <div class = "row">
       <div class = "col-12">
 
-        <h4> news_title </h4>
-        <p>The summary goes here brah</p>
+        <h4 class = "text-center">
+          <ul>
+          {% for data in mars_data %}
+          <li>{{data.news_title}}</li>
+          {% endfor %}
+          </ul>
+        </h4>
+
+        <div>
+        <ul class = "text-center">
+          {% for data in mars_data %}
+          <li class = "text-center">
+
+            {{data.news_p}}
+
+          </li>
+          {% endfor %}
+        </ul>
+        </div>
 
       </div>
     </div>
 
   </div>
+
+
 
 
 
