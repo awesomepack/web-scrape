@@ -29,8 +29,10 @@
       </div>
 
   </div>
-
-  <!-- Container for title and paragraph -->
+  </div>
+  <!-- End JumboTron -->
+  
+  <!-- Container for title -->
   <div class = "container">
 
     <div class = "row">
@@ -47,33 +49,25 @@
       <div class = "col-12">
 
         <h4 class = "text-center">
-          <ul>
-          {% for data in mars_data %}
-          <li>{{data.news_title}}</li>
-          {% endfor %}
-          </ul>
+          {{mars_data.news_title}}
         </h4>
 
-        <div>
-        <ul class = "text-center">
-          {% for data in mars_data %}
-          <li class = "text-center">
+        <p class = "text-center">
+          {{mars_data.news_p}}
+        </p>
 
-            {{data.news_p}}
 
-          </li>
-          {% endfor %}
-        </ul>
-        </div>
+
+        
 
       </div>
     </div>
-
   </div>
+  <!-- End title container -->
 
 
 
-
+  
 
 </body>
 

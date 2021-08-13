@@ -27,12 +27,12 @@ def root():
     db.scrape_app.drop()
 
     # Collecting data from collection
-    mars_data = db.collection.find({})
+    mars_data = db.collection.find_one({})
 
 
 
     # Render HTML file by passing queried data
-    return render_template("index.html" , mars_data  = mars_data , mars2 = mars_data )
+    return render_template("index.html" , mars_data  = mars_data)
     
 
 # /scrape will extract data from websites and store as dictionary for loading in mongo db
