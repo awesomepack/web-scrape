@@ -12,6 +12,10 @@ mongo = PyMongo(app , uri = "mongodb://localhost:27017/scrape_app")
 # / will serve as landing page
 @app.route('/')
 def root():
+
+    # Need to query mongo for mars Data
+
+    # Render HTML file by passing queried data
     return render_template("index.html" , text = "Initiate Countdown!" )
     
 
