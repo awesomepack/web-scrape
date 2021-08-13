@@ -4,7 +4,7 @@ from flask import Flask , render_template , redirect
 from flask_pymongo import PyMongo
 
 # Create Flask instance
-app = Flask(__name__)
+app = Flask(__name__ , template_folder= 'template')
 
 # Establish connection using PyMongo
 mongo = PyMongo(app , uri = "mongodb://localhost:27017/scrape_app")
@@ -12,6 +12,7 @@ mongo = PyMongo(app , uri = "mongodb://localhost:27017/scrape_app")
 # / will serve as landing page
 @app.route('/')
 def root():
+    return render_template("index.html" , text = "Welcome to my Home Page")
     
 
 # /scrape will extract data from websites and store as dictionary for loading in mongo db
